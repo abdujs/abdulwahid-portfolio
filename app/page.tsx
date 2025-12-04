@@ -1,6 +1,8 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -60,6 +62,26 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <div className="container flex flex-col items-center justify-center gap-6 px-4 text-center md:px-6">
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+            Abdulwahid Munewer
+          </h1>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+            A passionate Full Stack Developer blending modern web development with
+            hands-on DevOps practices to build and scale exceptional digital
+            experiences.
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <Link href="/cv">
+            <Button>View My CV</Button>
+          </Link>
+          <Link href="/blog">
+            <Button variant="secondary">Read My Blog</Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
