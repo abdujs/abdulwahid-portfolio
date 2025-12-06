@@ -3,35 +3,9 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 
 export default function HomePage() {
-  const projects = [
-    {
-      title: "Animated Marketing Site",
-      role: "Frontend · Next.js · Framer Motion",
-      description: "Built a fast, animated marketing experience with motion-driven storytelling and A/B tested CTAs.",
-      link: "#",
-    },
-    {
-      title: "Developer Docs Revamp",
-      role: "Design Systems · MDX · shadcn/ui",
-      description: "Rebuilt docs with MDX, composable UI primitives, and consistent theming across dark/light modes.",
-      link: "#",
-    },
-    {
-      title: "SaaS Onboarding Flow",
-      role: "Full Stack · Next.js · API",
-      description: "Shipped a guided onboarding with auth, usage analytics, and responsive UI for mobile-first customers.",
-      link: "#",
-    },
-    {
-      title: "Content Platform",
-      role: "CMS · CI/CD · Containers",
-      description: "Markdown-first content pipeline with CI, preview deploys, and containerized production runtime.",
-      link: "#",
-    },
-  ];
-
   return (
     <div className="bg-background py-12 sm:py-20">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-4 sm:gap-16 sm:px-6 lg:px-8">
@@ -77,14 +51,23 @@ export default function HomePage() {
           </motion.div>
         </motion.div>
 
-        <section className="space-y-6">
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0, y: 16 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] } },
+          }}
+          className="space-y-6"
+        >
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Featured projects</h2>
             <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
               A few recent builds spanning marketing sites, docs, onboarding flows, and content systems.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
             {projects.map((project) => (
               <div
                 key={project.title}
@@ -101,13 +84,13 @@ export default function HomePage() {
                     className="inline-flex items-center gap-1 rounded-md px-0 py-1 underline-offset-4 transition hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     View project
-                    <span aria-hidden>→</span>
+                    <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );
