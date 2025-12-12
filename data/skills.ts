@@ -6,21 +6,9 @@ export const skills = {
     "JavaScript",
     "Tailwind CSS",
     "Framer Motion",
-    "shadcn/ui"
+    "shadcn/ui",
   ],
-  backend: [
-    "Node.js",
-    "PostgreSQL",
-    "MongoDB",
-    "Prisma ORM",
-    "REST APIs"
-  ],
-  tools: [
-    "Git",
-    "Docker",
-    "Vercel",
-    "CI/CD",
-    "Figma"
-  ],
+  backend: ["Node.js", "PostgreSQL", "MongoDB", "Prisma ORM", "REST APIs"],
+  tools: ["Git", "Docker", "Vercel", "CI/CD", "Figma"],
   teaching: ["Curriculum Design", "Technical Communication", "Mentoring"],
 };

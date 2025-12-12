@@ -1,7 +1,27 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Laptop, Server, Wrench, PenTool } from "lucide-react";
+import {
+  Laptop,
+  Server,
+  Wrench,
+  PenTool,
+  Atom,
+  FileCode2,
+  Feather,
+  Database,
+  Cloud,
+  GitBranch,
+  Dock,
+  Terminal,
+  Settings2,
+  Zap,
+  Braces,
+  BadgeCheck,
+  LayoutDashboard,
+  MousePointer2,
+  LucideIcon,
+} from "lucide-react";
 import { skills as skillsData } from "@/data/skills";
 
 const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
@@ -19,6 +39,26 @@ const card: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
 };
 
+const skillIconMap: Record<string, LucideIcon> = {
+  React: Atom,
+  "Next.js": LayoutDashboard,
+  TypeScript: FileCode2,
+  JavaScript: Braces,
+  "Tailwind CSS": Feather,
+  "Framer Motion": Zap,
+  "shadcn/ui": MousePointer2,
+  "Node.js": Server,
+  PostgreSQL: Database,
+  MongoDB: Database,
+  "Prisma ORM": Settings2,
+  "REST APIs": Cloud,
+  Git: GitBranch,
+  Docker: Dock,
+  Vercel: Cloud,
+  "CI/CD": Terminal,
+  // Figma: No Lucide icon, will fallback
+};
+
 const categories = [
   { title: "Frontend", icon: Laptop, items: skillsData.frontend },
   { title: "Backend", icon: Server, items: skillsData.backend },
@@ -32,7 +72,9 @@ export function Skills() {
         <span className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-100">
           Skills
         </span>
-        <h2 className="text-2xl font-extrabold uppercase tracking-[0.24em] text-white">Technology</h2>
+        <h2 className="text-2xl font-extrabold uppercase tracking-[0.24em] text-white">
+          Technology
+        </h2>
         <span className="h-px w-24 bg-primary/60" aria-hidden />
       </div>
 
@@ -56,15 +98,21 @@ export function Skills() {
               <h3 className="text-lg font-semibold">{title}</h3>
             </div>
             <div className="mt-4 grid gap-2">
-              {items.map((skill) => (
-                <div
-                  key={skill}
-                  className="flex items-center gap-2 rounded-xl border border-blue-400/10 bg-blue-500/5 px-3 py-2 text-sm font-medium text-slate-100"
-                >
-                  <span className="size-2 rounded-full bg-primary/70" aria-hidden />
-                  {skill}
-                </div>
-              ))}
+              {items.map((skill) => {
+                const SkillIcon = skillIconMap[skill] || BadgeCheck;
+                return (
+                  <div
+                    key={skill}
+                    className="flex items-center gap-2 rounded-xl border border-blue-400/20 bg-blue-500/10 px-3 py-2 text-sm font-medium text-blue-400 transition hover:-translate-y-0.5 hover:border-pink-400 hover:text-pink-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400"
+                  >
+                    <SkillIcon
+                      className="size-4 text-blue-400 group-hover:text-pink-400 transition-colors"
+                      aria-hidden
+                    />
+                    {skill}
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         ))}

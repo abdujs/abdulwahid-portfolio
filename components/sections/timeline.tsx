@@ -30,7 +30,9 @@ export function Timeline() {
         <span className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-100">
           Timeline
         </span>
-        <h2 className="text-2xl font-extrabold uppercase tracking-[0.24em] text-white">Experience</h2>
+        <h2 className="text-2xl font-extrabold uppercase tracking-[0.24em] text-white">
+          Experience
+        </h2>
         <span className="h-px w-24 bg-primary/60" aria-hidden />
       </div>
 
@@ -51,10 +53,16 @@ export function Timeline() {
           className="space-y-8 pl-10"
         >
           {experiences.map((entry) => (
-            <motion.li key={entry.year + entry.role} variants={item} className="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-[0_16px_42px_-32px_rgba(59,130,246,0.35)] backdrop-blur">
+            <motion.li
+              key={entry.year + entry.role}
+              variants={item}
+              className="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-[0_16px_42px_-32px_rgba(59,130,246,0.35)] backdrop-blur"
+            >
               <span className="absolute -left-10 top-5 inline-flex size-4 items-center justify-center rounded-full border-2 border-primary bg-black" />
               <div className="flex flex-wrap items-baseline gap-2 text-slate-200">
-                <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">{entry.year}</span>
+                <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
+                  {entry.year}
+                </span>
                 <span className="text-lg font-semibold text-white">{entry.role}</span>
                 <span className="text-sm text-slate-400">@ {entry.company}</span>
                 <span className="text-xs text-slate-500">· {entry.location}</span>

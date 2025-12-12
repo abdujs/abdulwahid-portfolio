@@ -10,39 +10,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Animated Marketing Site",
-    role: "Frontend · Next.js · Framer Motion",
-    description: "Built a fast, animated marketing experience with motion-driven storytelling and A/B tested CTAs.",
-    link: "https://example.com/marketing",
-    github: "https://github.com/abdujs/marketing-site",
-    tech: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
-    image: "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=80",
+    title: "Mela-Software Website",
+    role: "Frontend · HTML · CSS · JavaScript",
+    description:
+      "A modern, responsive website for programming education, software development, and consulting. Features smooth animations, interactive navigation, particle effects, custom cursor, typewriter hero, and a validated contact form.",
+    link: "https://melasoftware.vercel.app",
+    github: "https://github.com/abdujs/melaSoftware",
+    tech: ["HTML5", "CSS3", "JavaScript", "AOS", "particles.js", "Font Awesome"],
+    image: "/screenshot/mela.png", // Place your screenshot in public/screenshot/
   },
   {
-    title: "Developer Docs Revamp",
-    role: "Design Systems · MDX · shadcn/ui",
-    description: "Rebuilt docs with MDX, composable UI primitives, and consistent theming across dark/light modes.",
-    link: "https://example.com/dev-docs",
-    github: "https://github.com/abdujs/dev-docs",
-    tech: ["MDX", "shadcn/ui", "Next.js", "Search"],
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80",
+    title: "Personal Portfolio",
+    role: "Full Stack · Next.js · TypeScript",
+    description:
+      "A modern developer portfolio featuring animated UI, blog, CV, and project showcase. Built with Next.js, TypeScript, shadcn/ui, Tailwind CSS, and automated CI/CD using GitHub Actions.",
+    link: "#", // Add your live portfolio link if available
+    github: "https://github.com/abdujs/abdulwahid-portfolio",
+    tech: ["Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS", "GitHub Actions CI/CD"],
+    image: "/screenshot/portfolio.png", // Place your screenshot in public/screenshot/
   },
   {
-    title: "SaaS Onboarding Flow",
-    role: "Full Stack · Next.js · API",
-    description: "Guided onboarding with auth, usage analytics, and responsive UI for mobile-first customers.",
-    link: "https://example.com/onboarding",
-    github: "https://github.com/abdujs/onboarding-flow",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "Auth"],
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    title: "Assunah Foundation",
+    role: "Full Stack · Next.js · Tailwind CSS",
+    description:
+      "A comprehensive platform dedicated to promoting authentic Islamic knowledge, community service, and spiritual growth. Features include program listings, university info, Daewa TV, donation, volunteering, and news updates.",
+    link: "https://www.sunnahfoundation.org/",
+    github: "https://github.com/abdujs/as-sunnah-foundation-web",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "Tailwind CSS", "Docker"],
+    image: "/screenshot/assunah.png",
   },
   {
-    title: "Content Platform",
-    role: "CMS · CI/CD · Containers",
-    description: "Markdown-first content pipeline with CI, preview deploys, and containerized production runtime.",
-    link: "https://example.com/content",
-    github: "https://github.com/abdujs/content-platform",
-    tech: ["CMS", "CI/CD", "Docker", "Edge"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    title: "Gelagay - Home Maintenance Service",
+    role: "Frontend · React · Tailwind CSS",
+    description:
+      "Gelagay is a digital marketplace transforming home maintenance by connecting homeowners with skilled professionals. Features include responsive design, secure user authentication, service booking, and direct messaging.",
+    link: "#", // Add your live link if available
+    github: "https://github.com/abdujs/Gelagay-Home-maintenace-service",
+    tech: ["React", "Tailwind CSS"],
+    image: "/screenshot/gelagay.png",
   },
 ];

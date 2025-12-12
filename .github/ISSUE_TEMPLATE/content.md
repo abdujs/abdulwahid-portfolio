@@ -5,9 +5,11 @@ labels: content
 ---
 
 ## Summary
-- 
+
+-
 
 ## Metadata checklist
+
 - [ ] Title
 - [ ] Description
 - [ ] Date
@@ -15,9 +17,11 @@ labels: content
 - [ ] Links/Images have alt text
 
 ## Links
-- 
+
+-
 
 ## Tests to run
+
 - [ ] npm run lint
 - [ ] npm run type-check
 - [ ] npm run build

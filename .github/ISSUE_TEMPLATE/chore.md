@@ -5,12 +5,15 @@ labels: chore
 ---
 
 ## Summary
-- 
+
+-
 
 ## Scope
-- 
+
+-
 
 ## Validation
+
 - [ ] npm run lint
 - [ ] npm run type-check
 - [ ] npm run build

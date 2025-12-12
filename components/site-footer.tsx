@@ -13,9 +13,9 @@ const navLinks = [
 
 const socialLinks = [
   { href: "https://github.com/abdujs", label: "GitHub", icon: Github },
-  { href: "mailto:contact@abdulwahid.dev", label: "Email", icon: Mail },
-  { href: "https://t.me/abdujs", label: "Telegram", icon: Send },
-  { href: "https://www.linkedin.com/in/abdulwahid-munewer", label: "LinkedIn", icon: Linkedin },
+  { href: "mailto:a.wahid.developer@gmail.com", label: "Email", icon: Mail },
+  { href: "https://t.me/Abdulwahid_Munewer", label: "Telegram", icon: Send, badge: true },
+  { href: "https://www.linkedin.com/in/abdulwahid-m/", label: "LinkedIn", icon: Linkedin },
 ];
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
@@ -39,11 +39,15 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
     <footer className={`border-t border-blue-400/20 bg-black/90 py-10 px-6 mt-20 ${className}`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-10">
         <div className="space-y-3">
-          <Link href="/" className="text-2xl font-bold bg-linear-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-linear-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent"
+          >
             Abdulwahid Munewer
           </Link>
           <p className="max-w-md text-base text-gray-400 font-medium">
-            Full-Stack Developer crafting reliable products with Next.js, TypeScript, and robust backend services.
+            Full-Stack Developer crafting reliable products with Next.js, TypeScript, and robust
+            backend services.
           </p>
           <div className="flex items-center gap-3 mt-2">
             {socialLinks.map((item) => {
@@ -57,7 +61,15 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
                   className="inline-flex items-center justify-center rounded-full border border-blue-400/20 bg-blue-500/10 p-2 text-blue-400 transition hover:-translate-y-0.5 hover:border-pink-400 hover:text-pink-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400"
                   aria-label={item.label}
                 >
-                  <Icon className="h-5 w-5" />
+                  <span className="relative">
+                    <Icon className="h-5 w-5" />
+                    {item.badge && (
+                      <span
+                        className="absolute -top-1 -right-1 size-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400"
+                        title="Active on Telegram"
+                      />
+                    )}
+                  </span>
                 </Link>
               );
             })}
@@ -65,17 +77,31 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
         </div>
         <div className="grid grid-cols-2 gap-8 text-base text-gray-400 sm:grid-cols-3">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">Navigate</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">
+              Navigate
+            </p>
             <div className="flex flex-col gap-2">
-              <Link href="/#hero" className="transition hover:text-pink-400">Home</Link>
-              <Link href="/#timeline" className="transition hover:text-pink-400">Experience</Link>
-              <Link href="/#skills" className="transition hover:text-pink-400">Skills</Link>
-              <Link href="/#projects" className="transition hover:text-pink-400">Projects</Link>
-              <Link href="/#contact" className="transition hover:text-pink-400">Contact</Link>
+              <Link href="/#hero" className="transition hover:text-pink-400">
+                Home
+              </Link>
+              <Link href="/#timeline" className="transition hover:text-pink-400">
+                Experience
+              </Link>
+              <Link href="/#skills" className="transition hover:text-pink-400">
+                Skills
+              </Link>
+              <Link href="/#projects" className="transition hover:text-pink-400">
+                Projects
+              </Link>
+              <Link href="/#contact" className="transition hover:text-pink-400">
+                Contact
+              </Link>
             </div>
           </div>
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">Social</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">
+              Social
+            </p>
             <div className="flex flex-col gap-2">
               {socialLinks.map((item) => (
                 <Link
@@ -93,8 +119,8 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
           <div className="hidden space-y-3 sm:block">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">Now</p>
             <div className="flex flex-col gap-2">
-              <span className="text-gray-400">Open to remote roles</span>
-              <span className="text-gray-400">Based in Addis Ababa</span>
+              <span className="text-gray-400">Currently Available</span>
+              <span className="text-gray-400">Addis Ababa, Ethiopia</span>
             </div>
           </div>
         </div>

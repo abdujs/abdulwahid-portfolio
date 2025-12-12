@@ -1,28 +1,9 @@
 import type { Metadata } from "next";
-import { Open_Sans, Poppins, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BackgroundEffects } from "@/components/layout/background-effects";
-
-const bodyFont = Open_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const headingFont = Poppins({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  display: "swap",
-});
-
-const monoFont = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Abdulwahid Munewer | Full-Stack Developer",
@@ -37,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bodyFont.variable} ${headingFont.variable} ${monoFont.variable} bg-black text-white antialiased`}
-      >
+      <body className={"bg-black text-white antialiased"}>
         <BackgroundEffects />
         <SiteHeader />
         <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8 md:ml-20">

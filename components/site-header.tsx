@@ -21,6 +21,38 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeHash, setActiveHash] = useState<string>(
+    typeof window !== "undefined" ? window.location.hash : "#hero"
+  );
+
+  // Listen for hash changes and scroll events to update active nav
+  useEffect(() => {
+    const onHashChange = () => {
+      setActiveHash(window.location.hash || "#hero");
+    };
+    window.addEventListener("hashchange", onHashChange);
+    // Also update on scroll for smooth scroll/section highlight
+    const onScroll = () => {
+      // Find the section closest to top
+      const sections = ["#hero", "#projects", "#contact"];
+      let found = "#hero";
+      for (const hash of sections) {
+        const el = document.querySelector(hash);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 80) found = hash;
+        }
+      }
+      setActiveHash(found);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onHashChange();
+    onScroll();
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -45,7 +77,9 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/15 px-3 py-2 text-base font-semibold text-primary shadow-[0_10px_30px_-18px_rgba(59,130,246,0.6)] backdrop-blur transition hover:bg-primary/20"
         >
-          <span className="hidden md:inline text-xs uppercase tracking-[0.28em] text-primary">AM</span>
+          <span className="hidden md:inline text-xs uppercase tracking-[0.28em] text-primary">
+            AM
+          </span>
           <span className="md:hidden">Abdulwahid.dev</span>
         </Link>
 
@@ -62,21 +96,35 @@ export function SiteHeader() {
 
         <nav className="hidden w-full flex-col items-center gap-3 md:flex">
           {navItems.map((item) => {
-            const active = item.href === "/#hero" ? pathname === "/" : pathname === item.href;
+            // Use hash for active detection
+            const hash = item.href.replace("/", "");
+            const active = activeHash === hash;
             const Icon = item.icon;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative flex h-14 w-14 flex-col items-center justify-center gap-1 rounded-xl border border-slate-800 bg-slate-900/70 text-slate-200 backdrop-blur transition hover:border-primary/70 hover:text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary",
-                  active ? "border-primary text-primary shadow-[0_12px_30px_-20px_rgba(59,130,246,0.7)]" : ""
+                  "relative flex h-14 w-14 flex-col items-center justify-center gap-1 rounded-full border border-blue-400/20 bg-blue-500/10 text-blue-400 transition hover:-translate-y-0.5 hover:border-pink-400 hover:text-pink-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400",
+                  active
+                    ? "border-pink-400 text-pink-400 shadow-[0_12px_30px_-20px_rgba(236,72,153,0.7)]"
+                    : ""
                 )}
               >
-                <Icon className={cn("size-5", active ? "text-primary" : "text-primary/70")} />
-                <span className={cn("mt-0.5 text-[11px] font-medium leading-none text-slate-300", active ? "text-primary" : "")}>{item.label}</span>
+                <Icon className={cn("size-5", active ? "text-pink-400" : "")} />
+                <span
+                  className={cn(
+                    "mt-0.5 text-[11px] font-medium leading-none",
+                    active ? "text-pink-400" : "text-blue-400"
+                  )}
+                >
+                  {item.label}
+                </span>
                 {active ? (
-                  <span className="absolute inset-0 rounded-xl border border-primary/60 bg-primary/8" aria-hidden />
+                  <span
+                    className="absolute inset-0 rounded-full border-2 border-pink-400 bg-pink-400/10"
+                    aria-hidden
+                  />
                 ) : null}
               </Link>
             );
@@ -84,7 +132,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden flex-1 flex-col items-center justify-end gap-3 pb-4 md:flex">
-          <Button asChild size="sm" className="w-14 rounded-xl px-0 py-3 text-[11px] font-semibold border-primary bg-primary text-white shadow-[0_14px_36px_-18px_rgba(59,130,246,0.6)] hover:bg-primary/90">
+          <Button
+            asChild
+            size="sm"
+            className="w-14 rounded-xl px-0 py-3 text-[11px] font-semibold border-primary bg-primary text-white shadow-[0_14px_36px_-18px_rgba(59,130,246,0.6)] hover:bg-primary/90"
+          >
             <Link href={downloadUrl} target="_blank" rel="noreferrer" download>
               CV
             </Link>
@@ -111,7 +163,11 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Button asChild size="sm" className="mt-2 w-full text-base border-primary bg-primary text-white hover:bg-primary/90">
+              <Button
+                asChild
+                size="sm"
+                className="mt-2 w-full text-base border-primary bg-primary text-white hover:bg-primary/90"
+              >
                 <Link href={downloadUrl} target="_blank" rel="noreferrer" download>
                   Download CV
                 </Link>

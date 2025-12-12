@@ -100,7 +100,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-export async function getPrevNext(slug: string): Promise<{ prev: PostMeta | null; next: PostMeta | null }> {
+export async function getPrevNext(
+  slug: string
+): Promise<{ prev: PostMeta | null; next: PostMeta | null }> {
   const all = await getAllPostsMeta();
   const idx = all.findIndex((p) => p.slug === slug);
   return {
