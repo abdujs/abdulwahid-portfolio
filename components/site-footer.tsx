@@ -46,8 +46,7 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
             Abdulwahid Munewer
           </Link>
           <p className="max-w-md text-base text-gray-400 font-medium">
-            Full-Stack Developer crafting reliable products with Next.js, TypeScript, and robust
-            backend services.
+            I build fast, reliable, and visually engaging web applications.
           </p>
           <div className="flex items-center gap-3 mt-2">
             {socialLinks.map((item) => {
