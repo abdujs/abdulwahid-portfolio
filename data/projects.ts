@@ -17,7 +17,7 @@ export const projects: Project[] = [
     link: "https://melasoftware.vercel.app",
     github: "https://github.com/abdujs/melaSoftware",
     tech: ["HTML5", "CSS3", "JavaScript", "AOS", "particles.js", "Font Awesome"],
-    image: "/screenshot/mela.png", // Place your screenshot in public/screenshot/
+    image: "/screenshot/mela.webp", // Place your screenshot in public/screenshot/
   },
   {
     title: "Personal Portfolio",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     link: "#", // Add your live portfolio link if available
     github: "https://github.com/abdujs/abdulwahid-portfolio",
     tech: ["Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS", "GitHub Actions CI/CD"],
-    image: "/screenshot/portfolio.png", // Place your screenshot in public/screenshot/
+    image: "/screenshot/portfolio.webp", // Place your screenshot in public/screenshot/
   },
   {
     title: "Assunah Foundation",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     link: "https://www.sunnahfoundation.org/",
     github: "https://github.com/abdujs/as-sunnah-foundation-web",
     tech: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "Tailwind CSS", "Docker"],
-    image: "/screenshot/assunah.png",
+    image: "/screenshot/assunah.webp",
   },
   {
     title: "Gelagay - Home Maintenance Service",
@@ -47,6 +47,6 @@ export const projects: Project[] = [
     link: "#", // Add your live link if available
     github: "https://github.com/abdujs/Gelagay-Home-maintenace-service",
     tech: ["React", "Tailwind CSS"],
-    image: "/screenshot/gelagay.png",
+    image: "/screenshot/gelagay.webp",
   },
 ];

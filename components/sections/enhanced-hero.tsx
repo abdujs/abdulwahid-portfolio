@@ -87,7 +87,7 @@ export function EnhancedHero() {
           <motion.div variants={item} className="lg:w-2/5">
             <div className="relative mx-auto flex h-72 w-72 items-center justify-center overflow-hidden rounded-full border border-slate-800 bg-slate-900/70 shadow-[0_18px_48px_-28px_rgba(59,130,246,0.55)]">
               <Image
-                src="/profile-placeholder.jpg"
+                src="/profile-placeholder.webp"
                 alt="Abdulwahid Munewer"
                 fill
                 className="object-cover"

@@ -2,7 +2,7 @@ import { EnhancedHero } from "@/components/sections/enhanced-hero";
 import { Timeline } from "@/components/sections/timeline";
 import { Skills } from "@/components/sections/skills";
 import { ProjectsGrid } from "@/components/sections/projects-grid";
-import { Contact } from "@/components/sections/contact";
+import ContactSection from "@/components/sections/contact";
 import { projects } from "@/data/projects";
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
       <Timeline />
       <Skills />
       <ProjectsGrid projects={projects} />
-      <Contact />
+      <ContactSection />
     </main>
   );
 }

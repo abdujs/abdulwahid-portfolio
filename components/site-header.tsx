@@ -107,7 +107,7 @@ export function SiteHeader() {
                 className={cn(
                   "relative flex h-14 w-14 flex-col items-center justify-center gap-1 rounded-full border border-blue-400/20 bg-blue-500/10 text-blue-400 transition hover:-translate-y-0.5 hover:border-pink-400 hover:text-pink-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400",
                   active
-                    ? "border-pink-400 text-pink-400 shadow-[0_12px_30px_-20px_rgba(236,72,153,0.7)]"
+                    ? "border-pink-400 text-pink-400 -translate-y-0.5"
                     : ""
                 )}
               >
@@ -120,28 +120,13 @@ export function SiteHeader() {
                 >
                   {item.label}
                 </span>
-                {active ? (
-                  <span
-                    className="absolute inset-0 rounded-full border-2 border-pink-400 bg-pink-400/10"
-                    aria-hidden
-                  />
-                ) : null}
+                {/* Removed extra active background and border for a simpler active style */}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden flex-1 flex-col items-center justify-end gap-3 pb-4 md:flex">
-          <Button
-            asChild
-            size="sm"
-            className="w-14 rounded-xl px-0 py-3 text-[11px] font-semibold border-primary bg-primary text-white shadow-[0_14px_36px_-18px_rgba(59,130,246,0.6)] hover:bg-primary/90"
-          >
-            <Link href={downloadUrl} target="_blank" rel="noreferrer" download>
-              CV
-            </Link>
-          </Button>
-        </div>
+        {/* CV button removed as requested */}
       </div>
 
       <AnimatePresence>
@@ -163,15 +148,7 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Button
-                asChild
-                size="sm"
-                className="mt-2 w-full text-base border-primary bg-primary text-white hover:bg-primary/90"
-              >
-                <Link href={downloadUrl} target="_blank" rel="noreferrer" download>
-                  Download CV
-                </Link>
-              </Button>
+              {/* Download CV button removed as requested */}
             </div>
           </motion.div>
         )}
