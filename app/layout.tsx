@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   title: "Abdulwahid Munewer | Full-Stack Developer",
   description:
     "Portfolio of Abdulwahid Munewer — building reliable, animated web experiences with Next.js, TypeScript, and solid backend services.",
+  openGraph: {
+    title: "Abdulwahid Munewer | Full-Stack Developer",
+    description: "Portfolio of Abdulwahid Munewer — building reliable, animated web experiences with Next.js, TypeScript, and solid backend services.",
+    url: "https://abdulwahid.dev/",
+    siteName: "Abdulwahid Munewer Portfolio",
+    images: [
+      {
+        url: "/screenshot/portfolio.webp",
+        width: 1200,
+        height: 630,
+        alt: "Abdulwahid Munewer Portfolio Screenshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abdulwahid Munewer | Full-Stack Developer",
+    description: "Portfolio of Abdulwahid Munewer — building reliable, animated web experiences with Next.js, TypeScript, and solid backend services.",
+    images: ["/screenshot/portfolio.webp"],
+    creator: "@abdujs",
+  },
 };
 
 export default function RootLayout({
