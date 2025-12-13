@@ -36,21 +36,17 @@ export function EnhancedHero() {
       >
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12">
           <motion.div variants={item} className="flex flex-col gap-6 lg:w-3/5">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
-              Full-Stack Developer
-            </p>
-            <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            {/* Removed value proposition headline as requested */}
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
               <span className="bg-linear-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent">
                 Abdulwahid Munewer
               </span>
             </h1>
             <p className="text-xl font-semibold text-slate-200">
-              Building reliable, animated web experiences
+              I build fast, reliable, and visually engaging web applications.
             </p>
             <p className="max-w-3xl text-base leading-relaxed text-slate-300">
-              I craft performant, accessible web apps with Next.js, strong typing, and motion where
-              it matters. I care about thoughtful UX, maintainable systems, and delivering features
-              end-to-end.
+              As a passionate Full-Stack Developer, I specialize in crafting high-performance, accessible web apps using Next.js, TypeScript, and modern animation. I have strong experience designing and integrating RESTful and GraphQL APIs. I focus on thoughtful user experiences, robust architecture, and delivering end-to-end solutions that drive results.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link

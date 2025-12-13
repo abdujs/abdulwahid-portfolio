@@ -5,10 +5,11 @@ export const experiences = [
     company: "Bewide Technology",
     location: "Remote",
     description:
-      "Developed and deployed robust web applications utilizing Node.js, React, and PostgreSQL, gaining direct experience in full-stack architecture and deployment cycles.",
+      "Developed robust web applications using Node.js, React, and PostgreSQL, gaining hands-on experience in full-stack architecture and development cycles.",
     bullets: [
-      "Contributed to the development of large-scale SaaS projects, collaborating effectively with cross-functional teams",
-      "Improved code quality and data integrity using TypeScript and Prisma ORM",
+      "Utilized Docker for containerization and streamlined development workflows.",
+      "Contributed to large-scale SaaS projects, collaborating with cross-functional teams using Jira and Trello to manage tasks and ensure timely delivery.",
+      "Improved code quality and data integrity by implementing TypeScript and Prisma ORM best practices.",
     ],
   },
   {
@@ -17,10 +18,10 @@ export const experiences = [
     company: "Meweda School",
     location: "AyerTena, Addis Ababa",
     description:
-      "Designed and delivered a comprehensive 10-week curriculum on foundational web technologies to 40+ high school students.",
+      "Designed and delivered a 10-week curriculum on foundational web technologies to 40+ high school students, focusing on practical skills and real-world application.",
     bullets: [
-      "Strengthened technical communication by explaining complex concepts clearly",
-      "Fostered collaborative learning with engaging lesson plans and hands-on projects",
+      "Enhanced technical communication by breaking down complex concepts into clear, actionable lessons.",
+      "Fostered collaborative learning through engaging lesson plans and hands-on projects.",
     ],
   },
   {
@@ -29,11 +30,11 @@ export const experiences = [
     company: "Wolkite",
     location: "Wolkite, Ethiopia",
     description:
-      "Conducted an 8-week web development training program for 30+ high school students as a volunteer, focusing on practical skills and student engagement.",
+      "Led an 8-week web development training program for 30+ high school students, emphasizing hands-on learning and mentorship.",
     bullets: [
-      "Developed engaging lesson plans and assessments to enhance student learning outcomes",
-      "Delivered hands-on sessions and provided mentorship to over 30 students",
-      "Improved student engagement and understanding through interactive teaching methods",
+      "Developed interactive lesson plans and assessments to maximize student engagement and learning outcomes.",
+      "Delivered practical sessions and provided mentorship to over 30 students.",
+      "Improved student understanding and project completion rates through collaborative teaching methods.",
     ],
   },
 ];
