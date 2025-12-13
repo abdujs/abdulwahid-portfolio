@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://abdulwahid.dev/sitemap.xml
+Sitemap: https://abdulwahid-dev.vercel.app/sitemap.xml
