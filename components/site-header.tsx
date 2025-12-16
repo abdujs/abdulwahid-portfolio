@@ -17,23 +17,24 @@ const navItems = [
 
 const downloadUrl = "/cv.pdf";
 
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeHash, setActiveHash] = useState<string>(
-    typeof window !== "undefined" ? window.location.hash : "#hero"
-  );
+  const [activeHash, setActiveHash] = useState<string>("#hero");
+  const [mounted, setMounted] = useState(false);
 
-  // Listen for hash changes and scroll events to update active nav
+  // Only run client-side effects after mount
   useEffect(() => {
+    setMounted(true);
+
     const onHashChange = () => {
       setActiveHash(window.location.hash || "#hero");
     };
     window.addEventListener("hashchange", onHashChange);
     // Also update on scroll for smooth scroll/section highlight
     const onScroll = () => {
-      // Find the section closest to top
       const sections = ["#hero", "#projects", "#contact"];
       let found = "#hero";
       for (const hash of sections) {
@@ -96,9 +97,9 @@ export function SiteHeader() {
 
         <nav className="hidden w-full flex-col items-center gap-3 md:flex">
           {navItems.map((item) => {
-            // Use hash for active detection
             const hash = item.href.replace("/", "");
-            const active = activeHash === hash;
+            // Only apply 'active' after mount to avoid hydration mismatch
+            const active = mounted && activeHash === hash;
             const Icon = item.icon;
             return (
               <Link
@@ -120,7 +121,6 @@ export function SiteHeader() {
                 >
                   {item.label}
                 </span>
-                {/* Removed extra active background and border for a simpler active style */}
               </Link>
             );
           })}
