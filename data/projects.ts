@@ -10,26 +10,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Mela-Software Website",
-    role: "Frontend · HTML · CSS · JavaScript",
-    description:
-      "A modern, responsive website for programming education, software development, and consulting. Features smooth animations, interactive navigation, particle effects, custom cursor, typewriter hero, and a validated contact form.",
-    link: "https://melasoftware.vercel.app",
-    github: "https://github.com/abdujs/melaSoftware",
-    tech: ["HTML5", "CSS3", "JavaScript", "AOS", "particles.js", "Font Awesome"],
-    image: "/screenshot/mela.webp", // Place your screenshot in public/screenshot/
-  },
-  {
-    title: "Personal Portfolio",
-    role: "Full Stack · Next.js · TypeScript",
-    description:
-      "A modern developer portfolio featuring animated UI, blog, CV, and project showcase. Built with Next.js, TypeScript, shadcn/ui, Tailwind CSS, and automated CI/CD using GitHub Actions.",
-    link: "#", // Add your live portfolio link if available
-    github: "https://github.com/abdujs/abdulwahid-portfolio",
-    tech: ["Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS", "GitHub Actions CI/CD"],
-    image: "/screenshot/portfolio.webp", // Place your screenshot in public/screenshot/
-  },
-  {
     title: "Assunah Foundation",
     role: "Full Stack · Next.js · Tailwind CSS",
     description:
@@ -39,6 +19,28 @@ export const projects: Project[] = [
     tech: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "Tailwind CSS", "Docker"],
     image: "/screenshot/assunah.webp",
   },
+   {
+    title: "Personal Portfolio",
+    role: "Full Stack · Next.js · TypeScript",
+    description:
+      "A modern developer portfolio featuring animated UI, project showcase, and contact form. Built with Next.js, TypeScript, shadcn/ui, Tailwind CSS, and automated CI/CD using GitHub Actions.",
+    link: "#", // Add your live portfolio link if available
+    github: "https://github.com/abdujs/abdulwahid-portfolio",
+    tech: ["Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS", "GitHub Actions CI/CD"],
+    image: "/screenshot/portfolio.webp", // Place your screenshot in public/screenshot/
+  },
+  {
+    title: "Mela-Software Website",
+    role: "Frontend · HTML · CSS · JavaScript",
+    description:
+      "A modern, responsive website for programming education, software development, and consulting. Features smooth animations, interactive navigation, particle effects, custom cursor, typewriter hero, and a validated contact form.",
+    link: "https://melasoftware.vercel.app",
+    github: "https://github.com/abdujs/melaSoftware",
+    tech: ["HTML5", "CSS3", "JavaScript", "AOS", "particles.js", "Font Awesome"],
+    image: "/screenshot/mela.webp", // Place your screenshot in public/screenshot/
+  },
+ 
+  
   {
     title: "Gelagay - Home Maintenance Service",
     role: "Frontend · React · Tailwind CSS",
@@ -47,6 +49,6 @@ export const projects: Project[] = [
     link: "#", // Add your live link if available
     github: "https://github.com/abdujs/Gelagay-Home-maintenace-service",
     tech: ["React", "Tailwind CSS"],
-    image: "/screenshot/gelagay.webp",
+    image: "/screenshot/gelagayHomePage.webp", // Place your screenshot in public/screenshot/
   },
 ];
