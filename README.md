@@ -2,7 +2,8 @@
 
 # Abdulwahid Munewer – Portfolio
 
-Modern, fast, and visually engaging personal portfolio built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. Features animated UI, project showcase, contact form, and automated CI/CD for seamless deployment.
+Modern, fast, and visually engaging personal portfolio built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. Features animated UI, project showcase, contact form, automated CI/CD, and integrated analytics for performance and visitor insights.
+
 
 
 
@@ -15,6 +16,8 @@ Modern, fast, and visually engaging personal portfolio built with Next.js, TypeS
 - 🔒 Automated CI/CD, Docker support, and Vercel deployment
 - 🔍 SEO best practices (Open Graph, Twitter meta, robots.txt, sitemap.xml)
 - 📬 Contact form for direct communication
+- 📊 Built-in analytics: Vercel Web Analytics & Speed Insights for privacy-friendly visitor and performance tracking
+
 
 
 
@@ -25,6 +28,7 @@ Modern, fast, and visually engaging personal portfolio built with Next.js, TypeS
 - shadcn/ui
 - Framer Motion
 - GitHub Actions CI/CD
+- Vercel Analytics & Speed Insights
 
 
 
@@ -57,16 +61,15 @@ npm run dev
 
 
 
-## Deployment
+
+## Deployment & Analytics
 
 - Deploys to Vercel (Dockerfile available for other platforms)
 - CI: lint + type-check on push
+- Vercel Analytics and Speed Insights enabled for real-time visitor and performance metrics
 
 
----
-
-_Crafted by Abdulwahid Munewer · [Contact](mailto:a.wahid.developer@gmail.com)_
 
 ---
 
-_Built and maintained by Abdulwahid Munewer. [Contact](mailto:a.wahid.developer@gmail.com)_
+_Crafted and maintained by Abdulwahid Munewer · [Contact](mailto:a.wahid.developer@gmail.com)_
