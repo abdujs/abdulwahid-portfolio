@@ -49,7 +49,7 @@ export default function RootLayout({
         <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8">
           {children}
         </main>
-        <SiteFooter />
+        <SiteFooter className="md:ml-20" />
         <Analytics />
         <SpeedInsights />
       </body>
