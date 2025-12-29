@@ -22,7 +22,7 @@ const cardVariants: Variants = {
 };
 
 export function ProjectsGrid({ projects }: { projects: Project[] }) {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+
   return (
     <section id="projects" className="space-y-6">
       <div className="flex flex-col items-center gap-2 text-center">
@@ -35,14 +35,13 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
         <span className="h-px w-24 bg-primary/60" aria-hidden />
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, idx) => (
+        {projects.map((project) => (
           <motion.div
             key={project.title}
             variants={cardVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            custom={idx}
           >
             <Card className="group relative min-h-[270px] border-slate-800 bg-slate-900/60 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-[0_20px_60px_-30px_rgba(59,130,246,0.5)] overflow-hidden p-3">
               {project.image && (
@@ -59,16 +58,12 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
               )}
               <CardHeader className="pb-2">
                 <CardTitle className="flex flex-col gap-1 text-white">
-                  <span className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-                    {project.role}
-                  </span>
                   <span className="text-lg">{project.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-slate-200 p-0">
-                {/* Description is shown inline if openIdx matches */}
                 <div className="flex flex-wrap gap-2">
-                  {(project.tech ?? []).slice(0, 4).map((tag) => (
+                  {(project.tech ?? []).map((tag) => (
                     <Badge
                       key={tag}
                       variant="secondary"
@@ -78,7 +73,8 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-3 pt-2">
+                <p className="text-sm text-slate-300 mb-2 min-h-[48px]">{project.description}</p>
+                <div className="flex gap-3 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {project.github && (
                     <Link
                       href={project.github}
@@ -100,26 +96,6 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
                     >
                       <ArrowUpRight className="size-5" aria-hidden />
                     </Link>
-                  )}
-                </div>
-                <div className="pt-2">
-                  {openIdx === idx ? (
-                    <>
-                      <p className="text-sm text-slate-300 mb-2">{project.description}</p>
-                      <span
-                        className="text-xs text-primary cursor-pointer underline"
-                        onClick={() => setOpenIdx(null)}
-                      >
-                        See less
-                      </span>
-                    </>
-                  ) : (
-                    <span
-                      className="text-xs text-primary cursor-pointer underline"
-                      onClick={() => setOpenIdx(idx)}
-                    >
-                      See more
-                    </span>
                   )}
                 </div>
               </CardContent>

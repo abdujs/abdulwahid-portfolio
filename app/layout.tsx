@@ -46,10 +46,10 @@ export default function RootLayout({
       <body className={"bg-black text-white antialiased"}>
         <BackgroundEffects />
         <SiteHeader />
-        <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8 md:ml-20">
+        <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8">
           {children}
         </main>
-        <SiteFooter className="md:ml-20" />
+        <SiteFooter />
         <Analytics />
         <SpeedInsights />
       </body>
