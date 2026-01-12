@@ -72,6 +72,17 @@ export function SiteFooter({ className = "" }: SiteFooterProps) {
                 </Link>
               );
             })}
+            {/* Download CV Button */}
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-blue-400 font-semibold transition hover:-translate-y-0.5 hover:border-pink-400 hover:text-pink-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400"
+              aria-label="Download CV"
+              download
+            >
+              Download CV
+            </a>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 text-base text-gray-400 sm:grid-cols-3">
