@@ -49,17 +49,17 @@ export function EnhancedHero() {
               As a passionate Full-Stack Developer, I specialize in crafting high-performance, accessible web apps using Next.js, TypeScript, and modern animation. I have strong experience designing and integrating RESTful and GraphQL APIs. I focus on thoughtful user experiences, robust architecture, and delivering end-to-end solutions that drive results.
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <Button asChild>
-                <Link
-                  href="https://flowcv.com/resume/u0sahg9n70"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View CV"
-                >
-                  <FileText className="size-5" aria-hidden />
-                  <span className="ml-2 font-semibold">View CV</span>
-                </Link>
-              </Button>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download CV"
+                download
+                className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-white font-semibold shadow hover:bg-blue-700 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary transition"
+              >
+                <FileText className="size-5" aria-hidden />
+                <span className="ml-2 font-semibold">Download CV</span>
+              </a>
               <Link
                 href="https://github.com/abdujs"
                 target="_blank"
